@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<html>
+
+<head>
+	<title>Cadastro de Disciplina</title>
+</head>
+
+<body>
+	<h3>Cadastro de Disciplina</h3>
+	<form method="post">
+		<label for="nome">Nome da disciplina:</label>
+		<input type="text" id="nome" name="nome" required><br><br>
+
+		<label for="professor">Professor:</label>
+		<input type="text" id="professor" name="professor" required><br><br>
+
+		<label>Horários:</label><br>
+		<input type="checkbox" id="horario1" name="horario1">
+		<label for="horario1">07:00 - 09:40</label><br>
+
+		<input type="checkbox" id="horario2" name="horario2">
+		<label for="horario2">09:50 - 12:30</label><br><br>
+
+		<input type="submit" value="Cadastrar">
+	</form>
+</body>
+
+</html>

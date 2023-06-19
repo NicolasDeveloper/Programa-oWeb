@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>Informação de Pessoa</title>
+</head>
+
+<body>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+			padding: 8px;
+			text-align: left;
+		}
+
+		h2 {
+			margin-bottom: 10px;
+		}
+	</style>
+	<h2>Informação de Pessoa</h2>
+	<b>Matrícula</b>: <span th:text="${pessoa.matricula}"></span><br>
+	<b>Nome</b>: <span th:text="${pessoa.nome}"></span><br>
+	<b>Email</b>: <span th:text="${pessoa.email}"></span><br>
+	<b>Data de egresso</b>: <span th:text="${pessoa.data}"></span><br>
+	<b>É professor</b>: <span th:if="${pessoa.isProfessor}">Sim</span><span
+		th:unless="${pessoa.isProfessor}">Não</span><br>
+	<span th:if="${disciplinas.size}">
+		<b>Disciplinas</b>:
+		<table>
+			<tr>
+				<th>Código</th>
+				<th>Nome</th>
+			</tr>
+			<tr th:each="disciplina: ${disciplinas}">
+				<td th:text="${disciplina.id}"></td>
+				<td th:text="${disciplina.nome}"></td>
+			</tr>
+		</table>
+	</span>
+</body>
+
+</html>
